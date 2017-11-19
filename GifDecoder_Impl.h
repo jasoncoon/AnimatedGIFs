@@ -596,8 +596,8 @@ void GifDecoder<maxGifWidth, maxGifHeight, lzwMaxBits>::parseTableBasedImage() {
 // Parse gif data
 template <int maxGifWidth, int maxGifHeight, int lzwMaxBits>
 int GifDecoder<maxGifWidth, maxGifHeight, lzwMaxBits>::parseData() {
-    if(nextFrameTime_ms > millis()) 
-        return ERROR_WAITING;
+    // if(nextFrameTime_ms > millis()) 
+    //     return ERROR_WAITING;
 
 #if GIFDEBUG == 1 && DEBUG_PARSING_DATA == 1
     Serial.println("\nParsing Data Block");
@@ -800,7 +800,7 @@ void GifDecoder<maxGifWidth, maxGifHeight, lzwMaxBits>::decompressAndDisplayFram
     // note the time before calling
 
     // wait until time to display next frame
-    while(nextFrameTime_ms > millis());
+    // while(nextFrameTime_ms > millis());
 
     // calculate time to display next frame
     nextFrameTime_ms = millis() + (10 * frameDelay);

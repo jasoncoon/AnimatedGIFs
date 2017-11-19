@@ -6,6 +6,9 @@ void getGIFFilenameByIndex(const char *directoryName, int index, char *pnBuffer)
 int openGifFilenameByIndex(const char *directoryName, int index);
 int initSdCard(int chipSelectPin);
 
+void fileClose();
+int openGifFilename(const char *pathname);
+
 bool fileSeekCallback(unsigned long position);
 unsigned long filePositionCallback(void);
 int fileReadCallback(void);

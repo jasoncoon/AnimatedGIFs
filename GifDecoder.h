@@ -40,6 +40,12 @@ public:
     void setFileReadCallback(file_read_callback f);
     void setFileReadBlockCallback(file_read_block_callback f);
 
+    // Logical screen descriptor attributes
+    int lsdWidth;
+    int lsdHeight;
+    
+    int frameDelay;
+    
 private:
     void parseTableBasedImage(void);
     void decompressAndDisplayFrame(unsigned long filePositionAfter);
@@ -66,8 +72,8 @@ private:
     int lzw_get_code(void);
 
     // Logical screen descriptor attributes
-    int lsdWidth;
-    int lsdHeight;
+//    int lsdWidth;
+//    int lsdHeight;
     int lsdPackedField;
     int lsdAspectRatio;
     int lsdBackgroundIndex;
@@ -80,7 +86,6 @@ private:
     int tbiPackedBits;
     bool tbiInterlaced;
 
-    int frameDelay;
     int transparentColorIndex;
     int prevBackgroundIndex;
     int prevDisposalMethod;
